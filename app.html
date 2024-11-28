@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>task-master</title>
+</head>
+<body>
+    <div class="http-message card-padding card-corner">
+        <div class="messages">
+            messages are not good messages
+        </div>
+    </div>
+    <div class="cover"></div>
+    <div class="cover2"></div>
+    <div class="container">
+        <nav class="card-corner card-padding">
+            <div class="logo">task-master</div>
+            <div class="sp1">
+                <div class="search">
+                    <input type="text" placeholder="search tasks" class="searchinput">
+                    <button class="searchbtn">
+                        <img src="assets/search.svg" alt="searchicon">
+                    </button>
+                    <div id="container12" class="card-corner">
+                        <div class="searchblock">
+                            <div class="searchlist"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="profile">
+                    <img src="assets/person.svg" alt="">
+                    <div class="my-profile card-corner">
+                        <div class="exit-btn">
+                            <img src="assets/close.svg" alt="close-icon">
+                        </div>
+                        <div class="picture">
+                            <img src="assets/person.svg" alt="">
+                        </div>
+                        <div class="user">
+                            <div class="username"></div>
+                            <div class="tasks-count">
+                                <span>
+                                    <span class="figures" id="total">0</span>
+                                    tasks
+                                </span>
+                                <span>
+                                    <span class="figures" id="pend">0</span>
+                                    pending
+                                </span>
+                                <span>
+                                    <span class="figures" id="prog">0</span>
+                                    in-progress
+                                </span>
+                                <span>
+                                    <span class="figures" id="comp">0</span>
+                                    completed
+                                </span>
+                            </div>
+                        </div>
+                        <button class="logout">log out</button>
+                    </div>
+                </div>
+            </div>
+        </nav>
+        <div class="content">
+            <div class="sidebar card-corner">
+                <form id="add-menu" class="menu liner">
+                    <div class="close-menu">
+                        <img src="assets/close.svg" alt="close-icon">
+                    </div>
+                    <h2 class="header2">Add new task</h2>
+                    <div class="all-queries">
+                        <div class="query">
+                            <label for="title">Task title</label>
+                            <input  required type="text" placeholder="task title" name="title">
+                        </div>
+                        <div class="query">
+                            <label for="priority">Priority</label>
+                            <select required name="priority" value="low" id="priority">
+                                <option value="low">low</option>
+                                <option value="medium">medium</option>
+                                <option value="high">high</option>
+                            </select>
+                        </div>
+                        <div class="query">
+                            <label for="">Due date</label>
+                            <input required type="date" name="dueDate">
+                        </div>
+                        <div class="query">
+                            <label for="description">Task description</label>
+                            <input required type="text" name="description">
+                        </div>
+                    </div>
+                    <button type="submit" id="addTask">
+                        <span>add new task</span>
+                        <span id="progress4" class="progress">
+                            <img src="assets/progress2.svg" alt="">
+                        </span>
+                    </button>
+                </form>
+                <div id="delete-menu" class="menu liner">
+                    <div class="close-menu">
+                        <img src="assets/close.svg" alt="close-icon">
+                    </div>
+                    <h2 class="header2" style="color:red">Delete all tasks</h2>
+                    <div class="del-message">
+                        <p>
+                            <span>Are you sure you want to delete all tasks?</span>
+                            <span>This action can not be reversed</span>
+                        </p>
+                        <button id="delete-all" class="delete">
+                            <span>delete all tasks</span>
+                            <span id="progress3" class="progress">
+                                <img src="assets/progress3.svg" alt="">
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                <div id="settings-menu" class="menu liner">
+                    <div class="close-menu">
+                        <img src="assets/close.svg" alt="close-icon">
+                    </div>
+                    <h2 class="header2">Settings</h2>
+                    <p>This feature is being developed!</p>
+                </div>
+                <button id="add" class="sidebtn liner">
+                    <img src="assets/add.svg" alt="add-icon">
+                </button>
+                <button  id="delete"  class="sidebtn liner">
+                    <img src="assets/delete.svg" alt="delete-icon">
+                </button>
+                <button  id="settings" class="sidebtn liner">
+                    <img src="assets/settings.svg" alt="settings-icon">
+                </button>
+            </div>
+            <div class="all-tasks card-padding card-corner">
+                <div class="task-options">
+                    <button class="view-btn selected-view" id="all">All</button>
+                    <button class="view-btn" id="in-progress">In-progress</button>
+                    <button class="view-btn" id="pending">Pending</button>
+                    <button class="view-btn" id="completed">Completed</button>
+                </div>
+                <div class="tasks card-corner">
+                    <div class="loader">
+                        <div class="balls">
+                            <div class="bounce"></div>
+                            <div class="bounce bounce2"></div>
+                            <div class="bounce bounce3"></div>
+                            <div class="bounce bounce4"></div>
+                        </div>
+                    </div>
+                    <div class="slider">
+                    </div>
+                </div>
+            </div>
+            <div class="other-tasks card-corner card-padding">
+                <div class="recommend">
+                    <h2>Recommended task</h2>
+                    <div class="rec-task">
+                        No recoommended task
+                    </div>
+                    <div class="calendar card-padding">
+                        This feature is being developed!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="scripts/index.js"></script>
+</body>
+</html>

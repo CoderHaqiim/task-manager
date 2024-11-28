@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>task-master</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="http-message card-padding card-corner">
+        <div class="messages">
+            messages are not good messages
+        </div>
+    </div>
+    <div class="form-container">
+        <div class="intro card-padding">
+            <div class="logo">task-master</div>
+            <div class="rest">
+                <h1>Manage your daily activities like a 
+                    <span class="colors">
+                        <span class="pro">pro!</span>
+                    </span>
+                </h1>
+            </div>
+        </div>
+        <div class="forms">
+            <form class="login" name="login">
+                <div class="form-title">Login</div>
+                <legend>
+                    <label for="email">Email</label>
+                    <input required class="form-input" id="login-email" name="email" type="text">
+                    <div id="email-message" class="form-message"></div>
+                </legend>
+                <legend>
+                    <label for="password">Password</label>
+                    <input autocomplete="true" id="login-password" required class="form-input" name="password" type="password">
+                    <div id="password-message" class="form-message"></div>
+                </legend>
+                <button class="form-button" id="loginBtn" type="submit">
+                    <span>Log in</span>
+                    <span id="progress1" class="progress">
+                        <img src="assets/progress.svg" alt="">
+                    </span>
+                </button>
+                <div class="direct">
+                    <span>Don't have an account? <button type="button" id="sign" class="dir">Sign up</button></span>
+                    <span>
+                        <a href>Forgot password</a>
+                    </span>
+                </div>
+            </form>
+            <form class="signup" name="signup">
+                <div class="form-title">Signup</div>
+                <legend>
+                    <label for="username">Username</label>
+                    <input autocomplete="true" id="signup-username" class="form-input" name="username" type="text">
+                    <div id="username-message" class="form-message"></div>
+                </legend>
+                <legend>
+                    <label for="email">Email</label>
+                    <input autocomplete="true" id="signup-email" required class="form-input" name="email" type="text">
+                    <div id="email-message" class="form-message"></div>
+                </legend>
+                <legend>
+                    <label for="password">Password</label>
+                    <input autocomplete="true" id="signup-password" required class="form-input" name="password" type="password">
+                    <div id="password-message" class="form-message">Password must contain 6 -32 characters, at least one uppercase letter, one lowercase letter, one digit and one special character</div>
+                </legend>
+                <legend>
+                    <label for="confirm">Confirm Password</label>
+                    <input autocomplete="true" id="confirm" required class="form-input" name="confirm" type="password">
+                    <div id="confirm-message" class="form-message"></div>
+                </legend>
+                <button class="form-button" id="signupBtn" type="submit">
+                    <span>Sign up</span>
+                    <span id="progress2" class="progress">
+                        <img src="assets/progress.svg" alt="">
+                    </span>
+                </button>
+                <div class="direct">
+                    <span>Already have an account? <button type="button" id="log" class="dir">Log in</button></span>
+                    <span>
+                    </span>
+                </div>
+            </form>
+        </div>
+    </div>
+    <script src="scripts/login.js"></script>
+</body>
+</html>
