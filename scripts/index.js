@@ -223,6 +223,13 @@ searchInput.oninput = () =>{
 
             const searchArray = tasks.filter(task => task.title.toLowerCase().includes(searchWord.toLowerCase()))
             searchArray.sort((a,b)=>a.title.localeCompare(b.title))
+
+            if(searchArray.length !== 0){
+                 searchBlock.style.border = 'solid 1px var(--accent)'
+            }else{
+                searchBlock.style.border = 'none'
+            }
+
             searchArray.forEach(item =>{
                 const item2 = document.createElement('div')
                 item2.classList.add('item2')

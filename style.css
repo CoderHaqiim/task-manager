@@ -273,7 +273,6 @@ nav{
 #container12{
     width:100%;
     height:auto;
-    border: solid 1px var(--accent);
     position: absolute;
     top:125%;
     display: none;
