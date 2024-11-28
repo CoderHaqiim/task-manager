@@ -64,6 +64,7 @@ async function getAllTasks(){
 async function createOneTask(body){
     const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/create`
     try{
+        console.log(body)
         const res = await fetch(URL,{
             method:"POST",
             body: JSON.stringify(body),
