@@ -36,7 +36,7 @@ window.showErrorMessage = (response) => {
 
 
 async function getAllTasks(){
-    const URL = `http://localhost:8081/api/tasks/all`
+    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/all`
     try{
         const res = await fetch(URL,{
             method:"GET",
@@ -62,7 +62,7 @@ async function getAllTasks(){
 }
 
 async function createOneTask(body){
-    const URL = `http://localhost:8081/api/tasks/create`
+    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/create`
     try{
         const res = await fetch(URL,{
             method:"POST",
@@ -90,7 +90,7 @@ async function createOneTask(body){
 }
 
 async function deleteOneTask(taskId){
-    const URL = `http://localhost:8081/api/tasks/dropone/${taskId}`
+    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/dropone/${taskId}`
     try{
         const res = await fetch(URL,{
             method:"DELETE",
@@ -113,7 +113,7 @@ async function deleteOneTask(taskId){
 }
 
 async function deleteAllTasks(){
-    const URL = `http://localhost:8081/api/tasks/dropall`
+    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/dropall`
     try{
         const res = await fetch(URL,{
             method:"DELETE",
@@ -136,7 +136,7 @@ async function deleteAllTasks(){
 }
 
 async function editOneTask(taskId,body){
-    const URL = `http://localhost:8081/api/tasks/edit/${taskId}`
+    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/edit/${taskId}`
     try{
         const res = await fetch(URL,{
             method:"PATCH",
