@@ -19,12 +19,12 @@ viewBox="0 0 5208.33 5208.33"
   <style type="text/css">
    <![CDATA[
     @font-face { font-family:"Arial";font-variant:normal;font-weight:bold;src:url("#FontID0") format(svg)}
-    .str0 {stroke:#3b3939;stroke-width:49.91;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313}
-    .str1 {stroke:#3b3939 ;stroke-width:166.67;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313}
-    .str2 {stroke:#3b3939 ;stroke-width:6.94;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313}
-    .fil2 {fill:#3b3939}
-    .fil0 {fill:#3b3939}
-    .fil1 {fill:#3b3939;fill-rule:nonzero}
+    .str0 {stroke-width:49.91;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313}
+    .str1 {stroke:#05FCD3;stroke-width:166.67;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313}
+    .str2 {stroke:#05FCD3;stroke-width:6.94;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:2.61313}
+    .fil2 {fill:#05FCD3}
+    .fil0 {fill:#05FCD3}
+    .fil1 {fill:#05FCD3;fill-rule:nonzero}
     .fnt0 {font-weight:bold;font-size:3339.61px;font-family:'Arial'}
    ]]>
   </style>
