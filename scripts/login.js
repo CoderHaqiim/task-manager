@@ -228,8 +228,12 @@ const signupRequest = async(data) =>{
             return null
         }else{
             const response = await res.json()
-            let errors = [...response]
-            return errors
+            if(Array.isArray(response)){
+                let errors = [...response]
+                return errors
+            }else{
+                return response
+            }
         }
     }catch(error){
         console.error(error)
