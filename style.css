@@ -419,7 +419,7 @@ input:focus, select:focus{
 }
 
 .query label{
-    font-size:0.8rem;
+    font-size:0.7rem;
     font-weight:600;
 }
 .sidebar{
@@ -752,7 +752,7 @@ form{
     width:100%;
     height:auto;
     margin-bottom:5px;
-    font-size:0.65rem;
+    font-size:0.6rem;
 }
 .progress{
     width:25px;
@@ -789,7 +789,7 @@ legend{
     color:var(--success-text);
 }
 .direct{
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
     justify-content: space-between;
     font-size:0.8rem;
