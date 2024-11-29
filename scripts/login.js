@@ -9,6 +9,26 @@ const inputs = document.querySelectorAll('input')
 const confirmInput = document.querySelector('#confirm')
 const progress1 = document.querySelector('#progress1')
 const progress2 = document.querySelector('#progress2')
+const eyes = document.querySelectorAll('.eye')
+
+const toggleEye = (eye) =>{
+        if(!eye.clicked){
+            eye.parentElement.children[2].type = "text";
+            eye.clicked = true;
+            eye.children[0].src= "../assets/not-visible.svg";
+       }else{
+           eye.parentElement.children[2].type = "password";
+           eye.clicked = false;
+           eye.children[0].src ="../assets/visible.svg";
+       }
+}
+
+eyes.forEach(eye =>{
+    eye.clicked = false
+    eye.onclick = () => toggleEye(eye)
+})
+
+
 let matchError;
 
 signBtn.onclick = () =>{
@@ -128,13 +148,14 @@ const showErrorMessage = (response) => {
     },5000)
 }
 
-signupForm.onsubmit = (event) => {
-    event.preventDefault()
+const checkNetwork = () =>{
     if(!navigator.onLine){
-        let response = {message: "Connection error, check your network"}
+        let response = {message: "Connection error. Check your network and retry"}
         showErrorMessage(response)
     }
-
+}
+signupForm.onsubmit = (event) => {
+    event.preventDefault()
     if(matchError){
         return 
     }
@@ -182,6 +203,8 @@ loginForm.onsubmit = (event) => {
 
 
 const loginRequest = async(data) =>{
+    checkNetwork()
+
     const URL = "https://task-manager-app-kf76.onrender.com/api/auth/login"
     try{
         const res = await fetch(URL,{
@@ -215,6 +238,7 @@ const loginRequest = async(data) =>{
 }
 
 const signupRequest = async(data) =>{
+    checkNetwork()
     const URL = "https://task-manager-app-kf76.onrender.com/api/auth/signup"
     try{
         const res = await fetch(URL,{

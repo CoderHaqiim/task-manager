@@ -26,9 +26,8 @@ const completeCount = document.querySelector('#comp')
 const myProfile = document.querySelector('.my-profile')
 const logoutBtn = document.querySelector('.logout')
 const profile = document.querySelector('.profile')
-const picture = document.querySelector('.picture')
 const username = document.querySelector('.username')
-const exitBtn = document.querySelector('.exit-btn')
+const balls = document.querySelector('.balls')
 
 let user;
 let searchWord;
@@ -44,14 +43,18 @@ const fetchTasks = async() => {
 
     if(allTasks){
         tasks = allTasks
-        loader.style.display = 'none'
         if(tasks.length !== 0){
+            loader.style.display = 'none'
             renderTasks(tasks)
         }else{
+            balls.style.display = "none"
+            loader.innerHTML += `<p>You have no tasks yet</p>`
             return
         }
     }
     else{
+        balls.style.display = 'none'
+        loader.innerHTML += `<p style="color:red">Oops! An error occured.</p>`
         return
     }
 }

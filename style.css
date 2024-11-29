@@ -315,6 +315,16 @@ nav{
     align-items: center;
     gap:10px;
 }
+.eye{
+    width:30px;
+    height:30px;
+    position:absolute;
+    top:25px;
+    padding:5px;
+    right:1px;
+    cursor:pointer;
+    background-color:#FFFFFF;
+}
 .delete{
     background-color:#f8e6e6;
     border:solid 1px #cd7676;
@@ -586,11 +596,11 @@ img{
     padding-right:10px;
     position:relative;
 }
-.tasks::-webkit-scrollbar, .slider2::-webkit-scrollbar{
-    width:2px;
-    background-color: var(--liner);
+.tasks::-webkit-scrollbar{
+    width:1px;
+    background-color: var(--accent-light);
 }
-.tasks::-webkit-scrollbar-thumb, .slider2::-webkit-scrollbar-thumb{
+.tasks::-webkit-scrollbar-thumb{
     background-color: var(--accent);
     border-radius:50%;
 }
@@ -741,6 +751,7 @@ form{
 .form-message{
     width:100%;
     height:auto;
+    margin-bottom:5px;
     font-size:0.65rem;
 }
 .progress{
@@ -754,6 +765,7 @@ legend{
     display: flex;
     gap:3px;
     flex-direction: column;
+    position: relative;
 }
 .http-message{
     width:auto;

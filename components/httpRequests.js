@@ -2,6 +2,12 @@ const token = localStorage.getItem('authtoken')
 const httpMessage = document.querySelector('.http-message')
 const messages = document.querySelector('.messages')
 
+const checkNetwork = () =>{
+    if(!navigator.onLine){
+        let response = {message: "Connection error. Check your network and retry"}
+        showErrorMessage(response)
+    }
+}
 
 const showSuccessMessage = (response) => {
     httpMessage.style.display = "flex"
@@ -36,6 +42,7 @@ window.showErrorMessage = (response) => {
 
 
 async function getAllTasks(){
+    checkNetwork()
     const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/all`
     try{
         const res = await fetch(URL,{
@@ -62,6 +69,7 @@ async function getAllTasks(){
 }
 
 async function createOneTask(body){
+    checkNetwork()
     const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/create`
     try{
         const res = await fetch(URL,{
@@ -89,6 +97,7 @@ async function createOneTask(body){
 }
 
 async function deleteOneTask(taskId){
+    checkNetwork()
     const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/dropone/${taskId}`
     try{
         const res = await fetch(URL,{
@@ -112,6 +121,7 @@ async function deleteOneTask(taskId){
 }
 
 async function deleteAllTasks(){
+    checkNetwork()
     const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/dropall`
     try{
         const res = await fetch(URL,{
@@ -135,6 +145,7 @@ async function deleteAllTasks(){
 }
 
 async function editOneTask(taskId,body){
+    checkNetwork()
     const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/edit/${taskId}`
     try{
         const res = await fetch(URL,{

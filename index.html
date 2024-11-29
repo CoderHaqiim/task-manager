@@ -28,13 +28,16 @@
             <form class="login" name="login">
                 <div class="form-title">Login</div>
                 <legend>
-                    <label for="email">Email</label>
-                    <input required class="form-input" id="login-email" name="email" type="text">
+                    <label name="email-label1" for="email">Email</label>
+                    <input required placeholder="email" class="form-input" id="login-email" name="email" type="text">
                     <div id="email-message" class="form-message"></div>
                 </legend>
                 <legend>
-                    <label for="password">Password</label>
-                    <input autocomplete="true" id="login-password" required class="form-input" name="password" type="password">
+                    <div class="eye" id="eye1">
+                        <img src="assets/visible.svg" alt="">
+                    </div>
+                    <label name="password-label1" for="password">Password</label>
+                    <input autocomplete="true" placeholder="password" id="login-password" required class="form-input" name="password" type="password">
                     <div id="password-message" class="form-message"></div>
                 </legend>
                 <button class="form-button" id="loginBtn" type="submit">
@@ -53,23 +56,29 @@
             <form class="signup" name="signup">
                 <div class="form-title">Signup</div>
                 <legend>
-                    <label for="username">Username</label>
-                    <input autocomplete="true" id="signup-username" class="form-input" name="username" type="text">
+                    <label name="username-label" for="username">Username</label>
+                    <input placeholder="username" autocomplete="true" id="signup-username" class="form-input" name="username" type="text">
                     <div id="username-message" class="form-message"></div>
                 </legend>
                 <legend>
-                    <label for="email">Email</label>
-                    <input autocomplete="true" id="signup-email" required class="form-input" name="email" type="text">
+                    <label name="email-label2" for="email">Email</label>
+                    <input autocomplete="true" placeholder="email" id="signup-email" required class="form-input" name="email" type="text">
                     <div id="email-message" class="form-message"></div>
                 </legend>
                 <legend>
-                    <label for="password">Password</label>
-                    <input autocomplete="true" id="signup-password" required class="form-input" name="password" type="password">
+                    <div class="eye" id="eye2">
+                        <img src="assets/visible.svg" alt="">
+                    </div>
+                    <label name="signup-label" for="password">Password</label>
+                    <input autocomplete="true" placeholder="password" id="signup-password" required class="form-input" name="password" type="password">
                     <div id="password-message" class="form-message">Password must contain 6 -32 characters, at least one uppercase letter, one lowercase letter, one digit and one special character</div>
                 </legend>
                 <legend>
+                    <div class="eye" id="eye3">
+                        <img src="assets/visible.svg" alt="">
+                    </div>
                     <label for="confirm">Confirm Password</label>
-                    <input autocomplete="true" id="confirm" required class="form-input" name="confirm" type="password">
+                    <input name="confirm-label" autocomplete="true" placeholder="confirm password" id="confirm" required class="form-input" name="confirm" type="password">
                     <div id="confirm-message" class="form-message"></div>
                 </legend>
                 <button class="form-button" id="signupBtn" type="submit">
