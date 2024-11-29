@@ -250,7 +250,7 @@ function CreateTask(task, tasks){
                                                 <img src="assets/progress3.svg" alt="">
                                             </span>
                                          </button>
-                                         <button onclick="saveTaskEdit()" class="save">
+                                         <button onclick="saveTaskEdit()">
                                             <span>save</span>
                                             <span id="progress2" class="progress">
                                                 <img src="assets/progress2.svg" alt="">

@@ -247,13 +247,13 @@ nav{
     justify-content: center;
     gap:20px;
     align-items: center;
-    right:-15px;
+    right:-17px;
     display:none;
     position: absolute;
     border:solid 1px var(--liner);
     width:auto;
     height:auto;
-    padding:18px;
+    padding:40px 20px;
     background-color:var(--background);
 }
 .cover,.cover2{
@@ -331,30 +331,22 @@ nav{
     cursor:pointer;
 }
 
-.save{
-    width:auto;
-    min-width:100px;
-    max-width:150px;
-    height:40px;
-    padding:20px 10px;
-    display:flex;
-    justify-content: center;
-    align-items: center;
-    border-radius:5px;
-    cursor:pointer;
-    background-color:var(--accent-light);
-    border:solid 1.5px var(--accent);
-    color:var(--accent);
-    font-weight: 600;
-    transition:5s;
-}
-
 .delete:hover{ 
-    background-color:#f5bebe;
+    background-color:#e5b3b3;
 }
 
-.save:hover{
-    background-color:#d8cae4;
+.description{
+    position:absolute;
+    border-radius:20px;
+    top:0px;
+    left:45px;
+    color:white;
+    width:max-content;
+    padding:5px 15px;
+    height: auto;
+    background-color:#0000009a;
+    display: none;
+    animation: fadein .3s linear forwards;
 }
 
 .btns{
@@ -369,7 +361,6 @@ nav{
 .liner:hover{
     border:solid 1px var(--accent);
 }
-
 .shadow{
     box-shadow:0px 0px 4px -2px black;
 }
@@ -436,6 +427,11 @@ input:focus, select:focus{
     -webkit-filter: grayscale(0%);
     filter: grayscale(0%);
 }
+
+.sidebtn:hover .description{
+    display: flex;
+}
+
 .sidebtn{
     width:40px;
     height:40px;
@@ -489,10 +485,11 @@ input:focus, select:focus{
     background-color:transparent;
 }
 
-button:not(.view-btn,.form-button, .searchbtn,.sidebtn,.dir,.delete, .save){
+button:not(.view-btn,.form-button, .searchbtn,.sidebtn,.dir,.delete){
     width:auto;
     padding:0px 10px;
     height:38px;
+    min-width:120px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -511,8 +508,8 @@ button:not(.view-btn,.form-button, .searchbtn,.sidebtn,.dir,.delete, .save){
 }
 
 button:hover:not(.selected-view,.searchbtn,.delete,.sidebtn,.view-btn,.dir,.save){
-    color:var(--background);
-    border:1px solid var(--accent)
+    border:1px solid var(--accent);
+    background-color: #b9aac2;
 }
 .sidebtn:hover, .view-btn:hover{
     background-color: var(--accent-light);
@@ -534,7 +531,8 @@ img{
     background-color: var(--card-color);
     border-radius:50%;
     -webkit-filter: grayscale(100%);
-    filter: grayscale(100%)
+    filter: grayscale(100%);
+    z-index:5;
 }
 
 .search:has(:focus){

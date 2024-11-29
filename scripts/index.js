@@ -255,13 +255,11 @@ function clearSearch(){
 }
 
 closeMenuBtn.forEach(button => 
-    button.onclick = () => closeMenu()
+    button.onclick = (event) =>{
+        event.stopPropagation()
+        closeMenu()
+    }
 )
-
-exitBtn.addEventListener('click',(event)=>{
-     event.stopPropagation()
-     closeMenu()
-})
 
 deleteAll.onclick = () =>{
     showProgress(progress3)
