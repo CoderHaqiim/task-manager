@@ -201,9 +201,13 @@ const loginRequest = async(data) =>{
             return null
         }else{
             const response = await res.json()
-            console.log(response)
-            showErrorMessage(response)
-            return null
+            if(Array.isArray(response)){
+                let errors = [...response]
+                return errors
+            }else{
+                showErrorMessage(response)
+                return null
+            }
         }
     }catch(error){
         showErrorMessage(error)
