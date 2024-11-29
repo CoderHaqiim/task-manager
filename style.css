@@ -406,7 +406,7 @@ nav{
 }
 input:not(.searchinput), select{
     width:100%;
-    height:35px;
+    height:38px;
     border-radius:5px;
     padding:8px;
     border:1px solid var(--liner)
@@ -894,6 +894,10 @@ legend{
     .forms form{
         width:100%;
         animation:none;
+    }
+
+    input, button{
+        height:40px;
     }
   }
 
