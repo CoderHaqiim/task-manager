@@ -232,7 +232,8 @@ const signupRequest = async(data) =>{
                 let errors = [...response]
                 return errors
             }else{
-                return response
+                showErrorMessage(response)
+                return null
             }
         }
     }catch(error){
