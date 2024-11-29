@@ -44,7 +44,6 @@ confirmInput.onblur = () =>{
 
 const checkErrors = (errors) =>{
     if(errors){
-        console.log(errors)
         errors.forEach(error=>{
             let path = error.path
             let message = error.message
@@ -195,7 +194,6 @@ const loginRequest = async(data) =>{
 
         if(res.ok){
             const response = await res.json()
-            console.log(response.token)
             window.localStorage.setItem('authtoken',response.token)
             window.localStorage.setItem('username',response.username)
             showSuccessMessage(response)
@@ -207,7 +205,6 @@ const loginRequest = async(data) =>{
         }
     }catch(error){
         showErrorMessage(error)
-        console.log(error.message)
     }
 }
 
@@ -230,16 +227,14 @@ const signupRequest = async(data) =>{
         }else{
             const response = await res.json()
             if(Array.isArray(response)){
-                console.log("is array")
                 let errors = [...response]
                 return errors
             }else{
-                console.log("not array")
                 showErrorMessage(response)
                 return null
             }
         }
     }catch(error){
-        console.error(error)
+        showErrorMessage(response)
     }
 }
