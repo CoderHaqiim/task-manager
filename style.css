@@ -322,6 +322,7 @@ nav{
     width:auto;
     height:38px;
     min-width:120px;
+    max-width:120px;
     padding:20px 10px;
     display:flex;
     justify-content: center;
