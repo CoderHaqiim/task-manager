@@ -36,7 +36,7 @@ window.showErrorMessage = (response) => {
 
 
 async function getAllTasks(){
-    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/all`
+    const URL = `https://task-manager-1gj4iu2qn-haqiims-projects.vercel.app/api/tasks/all`
     try{
         const res = await fetch(URL,{
             method:"GET",
@@ -62,7 +62,7 @@ async function getAllTasks(){
 }
 
 async function createOneTask(body){
-    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/create`
+    const URL = `https://task-manager-1gj4iu2qn-haqiims-projects.vercel.app/api/tasks/create`
     try{
         console.log(body)
         const res = await fetch(URL,{
@@ -91,7 +91,7 @@ async function createOneTask(body){
 }
 
 async function deleteOneTask(taskId){
-    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/dropone/${taskId}`
+    const URL = `https://task-manager-1gj4iu2qn-haqiims-projects.vercel.app/api/tasks/dropone/${taskId}`
     try{
         const res = await fetch(URL,{
             method:"DELETE",
@@ -114,7 +114,7 @@ async function deleteOneTask(taskId){
 }
 
 async function deleteAllTasks(){
-    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/dropall`
+    const URL = `https://task-manager-1gj4iu2qn-haqiims-projects.vercel.app/api/tasks/dropall`
     try{
         const res = await fetch(URL,{
             method:"DELETE",
@@ -137,7 +137,7 @@ async function deleteAllTasks(){
 }
 
 async function editOneTask(taskId,body){
-    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/edit/${taskId}`
+    const URL = `https://task-manager-1gj4iu2qn-haqiims-projects.vercel.app/api/tasks/edit/${taskId}`
     try{
         const res = await fetch(URL,{
             method:"PATCH",

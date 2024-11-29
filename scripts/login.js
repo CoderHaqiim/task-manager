@@ -182,7 +182,7 @@ loginForm.onsubmit = (event) => {
 
 
 const loginRequest = async(data) =>{
-    const URL = "https://task-manager-app-kf76.onrender.com/api/auth/login"
+    const URL = "https://task-manager-1gj4iu2qn-haqiims-projects.vercel.app/api/auth/login"
     try{
         const res = await fetch(URL,{
             method:"POST",
@@ -211,7 +211,7 @@ const loginRequest = async(data) =>{
 }
 
 const signupRequest = async(data) =>{
-    const URL = "https://task-manager-app-kf76.onrender.com/api/auth/signup"
+    const URL = "https://task-manager-1gj4iu2qn-haqiims-projects.vercel.app/api/auth/signup"
     try{
         const res = await fetch(URL,{
             method:"POST",

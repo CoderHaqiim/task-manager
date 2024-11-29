@@ -511,7 +511,6 @@ button:not(.view-btn,.form-button, .searchbtn,.sidebtn,.dir,.delete, .save){
 }
 
 button:hover:not(.selected-view,.searchbtn,.delete,.sidebtn,.view-btn,.dir,.save){
-    background-color: var(--accent);
     color:var(--background);
     border:1px solid var(--accent)
 }
