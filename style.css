@@ -899,6 +899,10 @@ legend{
     input, button{
         height:40px;
     }
+    .form-button{
+        width:100%;
+        font-size: 1rem;
+    }
   }
 
 
