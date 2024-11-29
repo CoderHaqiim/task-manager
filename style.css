@@ -893,6 +893,7 @@ legend{
     }
     .forms form{
         width:100%;
+        animation:none;
     }
   }
 
