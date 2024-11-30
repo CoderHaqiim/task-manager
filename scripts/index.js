@@ -44,7 +44,7 @@ const fetchTasks = async() => {
     if(allTasks){
         tasks = allTasks
         if(tasks.length !== 0){
-            // loader.style.display = 'none'
+            loader.style.display = 'none'
             renderTasks(tasks)
         }else{
             balls.style.display = "none"
@@ -171,8 +171,14 @@ const renderTasks = (tasks) =>{
                 slider.innerHTML += CreateTask(item, tasks)
             }) 
         }
+        if(tasks.length !== 0){
+            loader.style.display ="none"
+        }else{
+            loader.style.display ="flex"
+            loader.innerHTML += `<p>You have no tasks yet</p>`
+        }
     }else{
-        loader.style.display ="flex"
+        return
     }
 }
 
@@ -300,7 +306,6 @@ addMenu.onsubmit = (e) =>{
 
     showProgress(progress4)
     createOneTask(newTask).then(task =>{
-        // loader.style.display = "none"
         hideProgress(progress4)
         if(task){
             tasks.push(task)
