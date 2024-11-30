@@ -44,7 +44,7 @@ const fetchTasks = async() => {
     if(allTasks){
         tasks = allTasks
         if(tasks.length !== 0){
-            loader.style.display = 'none'
+            // loader.style.display = 'none'
             renderTasks(tasks)
         }else{
             balls.style.display = "none"
@@ -300,7 +300,7 @@ addMenu.onsubmit = (e) =>{
 
     showProgress(progress4)
     createOneTask(newTask).then(task =>{
-        loader.style.display = "none"
+        // loader.style.display = "none"
         hideProgress(progress4)
         if(task){
             tasks.push(task)
