@@ -171,6 +171,8 @@ const renderTasks = (tasks) =>{
                 slider.innerHTML += CreateTask(item, tasks)
             }) 
         }
+    }else{
+        loader.style.display ="flex"
     }
 }
 
@@ -298,6 +300,7 @@ addMenu.onsubmit = (e) =>{
 
     showProgress(progress4)
     createOneTask(newTask).then(task =>{
+        loader.style.display = "none"
         hideProgress(progress4)
         if(task){
             tasks.push(task)
