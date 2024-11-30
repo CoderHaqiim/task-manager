@@ -176,7 +176,7 @@ const renderTasks = (tasks) =>{
         }else{
             balls.style.display = 'none'
             loader.style.display ="flex"
-            loader.innerHTML += `<p>You have no tasks yet</p>`
+            loader.innerHTML = `<p>You have no tasks yet</p>`
         }
     }else{
         return
