@@ -727,7 +727,7 @@ button{
     align-items: center;
     justify-content: center;
 }
-/* .rest h1{
+.rest h1{
     font-size:2.3rem;
     font-weight: 700;
     color:var(--accent);
@@ -735,7 +735,7 @@ button{
     width:auto;
     height:auto;
     line-height: 3rem;
-} */
+}
 .colors{
     width:max-content;
     height: max-content;
