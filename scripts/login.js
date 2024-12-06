@@ -220,7 +220,7 @@ const loginRequest = async(data) =>{
             window.localStorage.setItem('authtoken',response.token)
             window.localStorage.setItem('username',response.username)
             showSuccessMessage(response)
-            window.location.href = './app.html'
+            window.location.href = './main'
             return null
         }else{
             const response = await res.json()

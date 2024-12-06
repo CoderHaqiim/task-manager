@@ -75,7 +75,7 @@ logoutBtn.onclick = () => {
 
 function logout(){
     localStorage.clear()
-    window.location.href ="./index.html"
+    window.location.href ="./index"
 }
 
 const toggleAddMenu = () => { 
