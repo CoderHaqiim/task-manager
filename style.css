@@ -640,7 +640,7 @@ img{
     border:1px solid var(--liner);
     z-index:1;
     cursor:pointer;
-    font-size:0.9rem;
+    font-size:0.8rem;
     gap:5px;
 }
 .task:hover{
