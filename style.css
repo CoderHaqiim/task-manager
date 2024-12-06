@@ -579,7 +579,7 @@ img{
     background-color: var(--accent-light);
 }
 .task-title{
-    font-weight:700;
+    font-weight:600;
     font-size:1rem;
     pointer-events: none;
 }
