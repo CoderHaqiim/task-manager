@@ -15,8 +15,9 @@
 }
 
 h1{
-    font-size:1.3rem;
-    margin-bottom:10px;
+    font-size:1.4rem;
+    margin-bottom:20px;
+    border-bottom:solid 1px var(--liner);
 }
 .ti{
     font-size:0.9rem;
