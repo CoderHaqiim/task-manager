@@ -112,8 +112,9 @@ h3{
 }
 
 h2{
-    font-size:1.2rem;
+    font-size:1.1rem;
     margin-bottom:5px;
+    font-weight:600;
 }
 .datePriority{
     display:flex;
