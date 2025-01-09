@@ -28,6 +28,7 @@ const logoutBtn = document.querySelector('.logout')
 const profile = document.querySelector('.profile')
 const username = document.querySelector('.username')
 const balls = document.querySelector('.balls')
+const yearMonth = document.querySelector('.year-month')
 
 let user;
 let searchWord;
@@ -317,5 +318,16 @@ addMenu.onsubmit = (e) =>{
         }
     })
 }
+
+const currentDate = new Date()
+
+const renderCalendar = (date) => {
+    const year = date.getFullYear()
+    const month = date.getMonth()
+
+    yearMonth.textContent = `${date.toLocaleString('default', { month: 'long' })}, ${year}`
+}
+
+renderCalendar(currentDate)
 
 window.renderTasks = renderTasks

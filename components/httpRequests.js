@@ -40,7 +40,6 @@ window.showErrorMessage = (response) => {
 }
 
 
-
 async function getAllTasks(){
     checkNetwork()
     const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/all`
@@ -122,7 +121,7 @@ async function deleteOneTask(taskId){
 
 async function deleteAllTasks(){
     checkNetwork()
-    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/dropall`
+    const URL = `https://task-manager-app-kf76.onrender.com/tasks/dropall`
     try{
         const res = await fetch(URL,{
             method:"DELETE",

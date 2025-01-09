@@ -17,7 +17,6 @@
 h1{
     font-size:1.4rem;
     margin-bottom:20px;
-    border-bottom:solid 1px var(--liner);
 }
 .ti{
     font-size:0.9rem;
@@ -107,14 +106,13 @@ h3{
 }
 
 .large-task h1{
-    border-bottom:solid 1px var(--liner);
     padding:2px;
 }
 
 h2{
     font-size:1.2rem;
-    margin-bottom:8px;
-    font-weight:600;
+    margin-bottom:10px;
+    font-weight:500;
 }
 .datePriority{
     display:flex;
@@ -127,7 +125,18 @@ h2{
     justify-content: space-between;
 }
 .first{
-    font-weight:600;
+    font-weight:700;
+    font-size:0.6rem;
+    background-color: var(--card-color);
+    position:absolute;
+    bottom:5px;
+    display:flex;
+    color:var(--accent);
+    justify-items: center;
+    align-items: center;
+    right:5px;
+    padding:2px 5px;
+    border-radius: 15px;
 }
 
 *{
@@ -449,6 +458,21 @@ input:focus, select:focus{
     display: flex;
 }
 
+#desc{
+    width:auto;
+    flex:1;
+}
+
+.desc2{
+    overflow:hidden;
+    width:100%;
+    white-space: nowrap; 
+    font-size:0.9rem;
+    display: flex;
+    align-items: center;
+    text-overflow: ellipsis;
+}
+
 .sidebtn{
     width:40px;
     height:40px;
@@ -502,7 +526,7 @@ input:focus, select:focus{
     background-color:transparent;
 }
 
-button:not(.view-btn,.form-button, .searchbtn,.sidebtn,.dir,.delete){
+button:not(.calendar-btn,.view-btn,.form-button, .searchbtn,.sidebtn,.dir,.delete){
     width:auto;
     padding:0px 10px;
     height:38px;
@@ -579,13 +603,12 @@ img{
     background-color: var(--accent-light);
 }
 .task-title{
-    font-weight:600;
+    font-weight:500;
     font-size:1rem;
     pointer-events: none;
 }
 .all-tasks{
     height: 100%;
-    width:auto;
     flex:1;
     display: flex;
     flex-direction:column;
@@ -640,8 +663,7 @@ img{
     border:1px solid var(--liner);
     z-index:1;
     cursor:pointer;
-    font-size:0.9rem;
-    gap:5px;
+    gap:3px;
 }
 .task:hover{
     background-color: var(--accent-light);
@@ -844,6 +866,22 @@ legend{
     max-height:400px;
     overflow-y: scroll;
 }
+.calendar-header{
+    width:100%;
+    height:25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.calendar-btn{
+    width:25px;
+    height:25px;
+    border-radius: 5px;
+    padding:3px;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
 .calendar{
     width:250px;
     height:250px;
@@ -851,7 +889,18 @@ legend{
     border:1px solid var(--liner);
     border-radius:5px;
     display:flex;
+    padding:7px;
     justify-content: center;
+}
+.calendar h3{
+    height:100%;
+    width:auto;
+    justify-content: center;
+    flex:1;
+    padding: 0;
+    background-color: transparent;
+    margin: 0;
+    display: flex;
     align-items: center;
 }
 .loader{

@@ -268,11 +268,10 @@ function CreateTask(task, tasks){
                         <span style= 'pointer-events:none; border:1px solid ${statusText}; color:${statusText};background-color:${statusColor}'} class='status'>${task.status}</span>
                         <span class="task-title">${task.title}</span>
                         <div class='between' style="pointer-events:none; font-size:0.9rem;">
-                         <span>${task.description}</span>
+                         <span class="desc2">${task.description.length > 35? task.description.slice(0,35) + "..." : task.description}</span>
                          ${
                             tasks == window.bestTask? 
                             `<span>
-                                priority:
                                 <span class="first">${task.priority}</span>
                             </span>`:""
                          }
