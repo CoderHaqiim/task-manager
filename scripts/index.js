@@ -29,6 +29,10 @@ const profile = document.querySelector('.profile')
 const username = document.querySelector('.username')
 const balls = document.querySelector('.balls')
 const yearMonth = document.querySelector('.year-month')
+const prevBtn = document.querySelector('#prev-date')
+const nextBtn = document.querySelector('#next-date')
+const days = document.querySelector('.days')
+const dates = document.querySelector('.dates')
 
 let user;
 let searchWord;
@@ -321,13 +325,66 @@ addMenu.onsubmit = (e) =>{
 
 const currentDate = new Date()
 
+console.log(Date.now())
+
 const renderCalendar = (date) => {
+    let firstDate = 1
+    const firstDay = new Date(date.getFullYear(),date.getMonth(),1).getDay()
+    console.log(firstDay)
+    const lastDay = new Date(date.getFullYear(),date.getMonth() + 1, 0).getDate()
     const year = date.getFullYear()
     const month = date.getMonth()
-
     yearMonth.textContent = `${date.toLocaleString('default', { month: 'long' })}, ${year}`
+    for(let i = 0; i < lastDay + firstDay; i++){
+        const oneDay = document.createElement('div')
+        oneDay.classList.add('date')
+        if(i < firstDay){
+            dates.appendChild(oneDay)
+        }else{
+            oneDay.textContent = firstDate
+            if(firstDate == new Date().getDate()){
+                oneDay.classList.remove("date")
+                oneDay.classList.add("today")
+            }
+            dates.appendChild(oneDay)
+            firstDate ++
+        }
+    }
 }
 
 renderCalendar(currentDate)
+const daysOfTheWeek = ["sun", "mon", "tue", "wed", "thur", "fri", "sat"]
 
+function createDays(){
+    daysOfTheWeek.forEach(item => {
+        const day = document.createElement("div")
+        day.classList.add('day')
+        day.textContent = item
+        days.appendChild(day)
+    })
+}
+
+nextBtn.onclick = () =>{
+    while(dates.firstChild){
+        dates.firstChild.remove()
+    }
+    const firstDay = new Date(currentDate.getFullYear(),currentDate.getMonth(),1).getDay()
+    const lastDay = new Date(currentDate.getFullYear(),currentDate.getMonth() + 1, 0).getDate()
+    console.log(firstDay, lastDay)
+    currentDate.setMonth(currentDate.getMonth() + 1)
+    renderCalendar(currentDate)
+}
+
+prevBtn.onclick = () =>{
+    while(dates.firstChild){
+        dates.firstChild.remove()
+    }
+    currentDate.setMonth(currentDate.getMonth() - 1)
+    const firstDay = new Date(currentDate.getFullYear(),currentDate.getMonth(),1).getDay()
+    const lastDay = new Date(currentDate.getFullYear(),currentDate.getMonth() + 1, 0).getDate()
+    console.log(firstDay,lastDay)
+    renderCalendar(currentDate)
+}
+
+createDays()
 window.renderTasks = renderTasks

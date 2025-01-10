@@ -162,34 +162,35 @@
             </div>
             <div class="other-tasks card-corner card-padding">
                 <div class="recommend">
-                    <div class="holder">
+                    <div class="holder1 holder">
                         <h2>Recommended task</h2>
                         <div class="rec-task">
                             No recommended task
                         </div>
                     </div>
-                    <div class="holder">
-                        <h2>Today's tasks</h2>
-                        <div class="rec-task">
-                            No recommended task
+                    <div class="holder2 holder">
+                        <h2>Due today</h2>
+                        <div class="today-tasks">
+                            No task is due today
                         </div>
                     </div>
                 </div>
             </div>
             <div class="other-tasks2 card-corner card-padding">
-                <div class="recommend">
+                <div class="calendar-column">
                     <h2>Calendar</h2>
                     <div class="calendar">
                         <div class="calendar-header">
-                            <button class="calendar-btn">
+                            <button class="calendar-btn" id="prev-date">
                                 <img src="assets/left.svg" alt="back">
                             </button>
                             <h3 class="year-month"></h3>
-                            <button class="calendar-btn">
+                            <button class="calendar-btn" id="next-date">
                                 <img src="assets/right.svg" alt="forward">
                             </button>
                         </div>
-                        
+                        <div class="days"></div>
+                        <div class="dates"></div>
                     </div>
                 </div>
             </div>

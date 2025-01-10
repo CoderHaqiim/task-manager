@@ -125,7 +125,7 @@ h2{
     justify-content: space-between;
 }
 .first{
-    font-weight:700;
+    font-weight:600;
     font-size:0.6rem;
     background-color: var(--card-color);
     position:absolute;
@@ -173,26 +173,38 @@ body{
 }
 
 
-.recommend{
+.recommend,.calendar-column{
+    height:100%;
     width:100%;
-    height: max-content;
     display: flex;
     gap:20px;
     flex-direction: column;
     align-items: center;
 }
-.recommend:has(.calendar){
+.calendar-column{
     gap:0;
+    height: max-content;
 }
 
-.recommend h2{
+.recommend h2, .calendar-column h2{
     width:100%;
     text-align:left;
 }
 
 .rec-task{
     width:100%;
-    height:90px;
+    height:80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius:5px;
+    color: var(--grey);
+    background-color: #00000011;
+}
+
+.today-tasks{
+    width:100%;
+    height:90%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -457,6 +469,59 @@ input:focus, select:focus{
 .sidebtn:hover .description{
     display: flex;
 }
+.days{
+    margin-top:15px;
+    margin-bottom:5px;
+    width:100%;
+    height:15px;
+    border-bottom:solid 1px var(--liner);
+    display: flex;
+}
+.day, .date, .today{
+    width:auto;
+    display:flex;
+    justify-content:center;
+    align-items: center;
+    font-size:0.7rem;
+    flex:1;
+}
+.today{
+    color:white;
+    background-color:var(--accent);
+    width: 22px;
+    place-self:center;
+    border-radius:50%;
+    height:22px;
+    cursor:pointer;
+    font-weight:500;
+}
+.dates{
+    margin-top:5px;
+    width:100%;
+    column-gap:3px;
+    row-gap:7px;
+    height:300;
+    display: grid;
+    grid-template-columns:repeat(7,1fr);
+}
+.date{
+    background-color:var(--card-color);
+    width: 22px;
+    place-self:center;
+    border-radius:50%;
+    height:22px;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.date:hover{
+    background-color: var(--accent-light);
+    color:var(--accent);
+}
+
+.day:first-child{
+    color:red;
+}
 
 #desc{
     width:auto;
@@ -594,8 +659,8 @@ img{
     border-radius:20px;
     position:absolute;
     right:10px;
-    padding:6px 12px;
-    font-size:0.7rem;
+    padding:3px 6px;
+    font-size:0.6rem;
     display: flex;
     align-items:center;
     justify-content:center;
@@ -632,7 +697,7 @@ img{
 }
 .tasks::-webkit-scrollbar-thumb{
     background-color: var(--accent);
-    border-radius:50%;
+    border-radius:100%;
 }
 .pending-tasks{
     width:50%;
@@ -651,7 +716,7 @@ img{
 }
 .task, .onetask{
     width:100%;
-    height:90px;
+    height:80px;
     position:relative;
     border-radius: 5px;
     margin-bottom:5px;
@@ -659,11 +724,14 @@ img{
     justify-content: center;
     flex-direction: column;
     background-color: var(--background);
-    padding:15px 20px;
+    padding:0px 10px;
     border:1px solid var(--liner);
     z-index:1;
     cursor:pointer;
     gap:3px;
+}
+.onetask{
+    margin-bottom:0;
 }
 .task:hover{
     background-color: var(--accent-light);
@@ -708,6 +776,10 @@ button{
 }
 .holder{
     width:100%;
+    height:max-content;
+}
+.holder2{
+    flex:1;
 }
 .item2{
     width:100%;
@@ -888,7 +960,6 @@ legend{
     background-color: var(--background);
     border:1px solid var(--liner);
     border-radius:5px;
-    display:flex;
     padding:7px;
     justify-content: center;
 }

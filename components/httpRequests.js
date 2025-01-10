@@ -39,7 +39,6 @@ window.showErrorMessage = (response) => {
     },4000)
 }
 
-
 async function getAllTasks(){
     checkNetwork()
     const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/all`
