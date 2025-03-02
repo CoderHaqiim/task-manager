@@ -33,6 +33,8 @@ const prevBtn = document.querySelector('#prev-date')
 const nextBtn = document.querySelector('#next-date')
 const days = document.querySelector('.days')
 const dates = document.querySelector('.dates')
+const td = document.querySelector('.td')
+const todayTasks = document.querySelector('.today-tasks')
 
 let user;
 let searchWord;
@@ -128,6 +130,7 @@ function countTasks(item){
 
 const renderTasks = (tasks) =>{
     comp = 0; pend = 0; prog = 0;
+    td.innerHTML = " "
 
     if(tasks){
         total = tasks.length;
@@ -136,14 +139,25 @@ const renderTasks = (tasks) =>{
         tasks.forEach(task => {
             countTasks(task.status)
             let taskDate = new Date(task.dueDate)
+            let todayDate = new Date()
+            let dueDateNumber = new Date(taskDate.getFullYear(), taskDate.getMonth(), taskDate.getDate()).getTime()
+            todayDate = new Date(todayDate.getFullYear(), todayDate.getMonth(),todayDate.getDate()).getTime()
             
             if(taskDate == 'Invalid Date'){
                 return
             }else{
                 task.fDueDate = taskDate?.toISOString().split('T')[0];
+
+                function getDueDates(){
+                    if(dueDateNumber === todayDate){
+                        td.innerHTML += CreateTask(task, tasks)
+                    }
+                }
+
+                getDueDates()
             }
         })
-    
+
         slider.innerHTML = '';
     
         let priorityScale = {"high":1, "medium":2,"low":3}
@@ -183,6 +197,7 @@ const renderTasks = (tasks) =>{
             loader.style.display ="flex"
             loader.innerHTML = `<p>When you create tasks, they appear here</p>`
         }
+
     }else{
         return
     }
@@ -325,15 +340,11 @@ addMenu.onsubmit = (e) =>{
 
 const currentDate = new Date()
 
-console.log(Date.now())
-
 const renderCalendar = (date) => {
     let firstDate = 1
     const firstDay = new Date(date.getFullYear(),date.getMonth(),1).getDay()
-    console.log(firstDay)
     const lastDay = new Date(date.getFullYear(),date.getMonth() + 1, 0).getDate()
     const year = date.getFullYear()
-    const month = date.getMonth()
     yearMonth.textContent = `${date.toLocaleString('default', { month: 'long' })}, ${year}`
     for(let i = 0; i < lastDay + firstDay; i++){
         const oneDay = document.createElement('div')
@@ -342,7 +353,7 @@ const renderCalendar = (date) => {
             dates.appendChild(oneDay)
         }else{
             oneDay.textContent = firstDate
-            if(firstDate == new Date().getDate()){
+            if(firstDate == new Date().getDate() && date.getMonth() == new Date().getMonth() && date.getFullYear() == new Date().getFullYear()){
                 oneDay.classList.remove("date")
                 oneDay.classList.add("today")
             }
@@ -370,7 +381,6 @@ nextBtn.onclick = () =>{
     }
     const firstDay = new Date(currentDate.getFullYear(),currentDate.getMonth(),1).getDay()
     const lastDay = new Date(currentDate.getFullYear(),currentDate.getMonth() + 1, 0).getDate()
-    console.log(firstDay, lastDay)
     currentDate.setMonth(currentDate.getMonth() + 1)
     renderCalendar(currentDate)
 }
@@ -382,7 +392,6 @@ prevBtn.onclick = () =>{
     currentDate.setMonth(currentDate.getMonth() - 1)
     const firstDay = new Date(currentDate.getFullYear(),currentDate.getMonth(),1).getDay()
     const lastDay = new Date(currentDate.getFullYear(),currentDate.getMonth() + 1, 0).getDate()
-    console.log(firstDay,lastDay)
     renderCalendar(currentDate)
 }
 
