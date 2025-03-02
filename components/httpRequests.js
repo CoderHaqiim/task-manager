@@ -120,7 +120,7 @@ async function deleteOneTask(taskId){
 
 async function deleteAllTasks(){
     checkNetwork()
-    const URL = `https://task-manager-app-kf76.onrender.com/tasks/dropall`
+    const URL = `https://task-manager-app-kf76.onrender.com/api/tasks/dropall`
     try{
         const res = await fetch(URL,{
             method:"DELETE",
